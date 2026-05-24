@@ -5,7 +5,10 @@ import java.net.http.HttpResponse;
 
 public class TestGemini {
     public static void main(String[] args) throws Exception {
-        String url = "https://generativelanguage.googleapis.com/v1beta/models?key=AIzaSyAhfjl_1BNqUiluhlu0l324bR1JySp7WOg";
+        String apiKey = System.getenv("GEMINI_API_KEY");
+
+        String url =
+                "https://generativelanguage.googleapis.com/v1beta/models?key=" + apiKey;
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .GET()
